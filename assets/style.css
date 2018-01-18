@@ -23,7 +23,7 @@ h1, h2, h3 {
 }
 
 .jumbotron {
-	background-image: url("../assets/images/bryanpark.jpg");
+	background-image: url("./assets/images/bryanpark.jpg");
 	background-size: cover;
 	color: #000000;
 	text-align: center; 
