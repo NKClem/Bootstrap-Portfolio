@@ -1,3 +1,4 @@
+//array to hold portfolio items
 var portfolioItems = [
     {
         title: "Magical Harry Potter Trivia Game",
@@ -25,13 +26,17 @@ var portfolioItems = [
     }
 ]
 
+//loop through portfolioItems array
+//dynamically append cards with data from array to #portfolioItems in html
 function buildPortfolio() {
     $('#portfolioItems').empty();
     portfolioItems.forEach(function(element) {
-        $('#portfolioItems').append('<div class="card portfolioCard"><img class="img-fluid" src=" '+element.image+' "/><div class="card-body"><h5 class="card-title">' + element.title + '</h5><p class="card-text">' +element.summary+ '</p><a href=" '+element.url+' " target="_blank">See App</a></div></div>');
+        $('#portfolioItems').append('<div class="card portfolioCard"><img class="img-fluid" src=" '+element.image+' " alt="' +element.title+ ' App Image"/><div class="card-body"><h5 class="card-title">' + element.title + '</h5><p class="card-text">' +element.summary+ '</p><a href=" '+element.url+' " target="_blank">See App</a></div></div>');
     });
 }
 
+//use switch statement to determine which div user sees on page, depending on which nav-link is clicked
+//dynamically change heading to reflect which "page" user is viewing
 function routePages(event) {
     var pageRoutes = event.target.dataset.content;
 
@@ -40,20 +45,12 @@ function routePages(event) {
             $('#jumboHeading').text("About Me");
             $('#aboutMeSection').removeClass('d-none');
             $('#portfolioSection').addClass('d-none');
-            $('#contactMeSection').addClass('d-none');
             break;
         case "portfolio":
             $('#jumboHeading').text("Portfolio");
             $('#aboutMeSection').addClass('d-none');
-            $('#contactMeSection').addClass('d-none');
             $('#portfolioSection').removeClass('d-none');
-            buildPortfolio();
-            break;
-        case "contactMe":
-            $('#jumboHeading').text("Contact Me");
-            $('#portfolioSection').addClass('d-none');
-            $('#aboutMeSection').addClass('d-none');
-            $('#contactMeSection').removeClass('d-none');
+            buildPortfolio();  //include buildPortfolio function in portfolio page
             break;
         default:
             console.log("Error");
@@ -63,41 +60,5 @@ function routePages(event) {
 $(document).ready(function() {
     
     $('.nav-link').click(routePages);
-
-    //contact form code
-    $('#contactForm').validator();
-
-    $('#contactForm').on('submit', function(e) {
-        //if validator does not prevent form submit
-        if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
-            
-            //POST values in background of the script URL
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $(this).serialize(),
-                success: function(data)
-                {
-                    //data = JSON object return from contact.php
-                    //we receive the type of message: success x danger and apply it
-                    var messageAlert = 'alert-' + data.type;
-                    var messageText = data.message;
-
-                    //compose bootstrap alert box html
-                    var alertBox = '<div class="alert ' +messageAlert+ ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +messageText+ '</div>';
-                    
-                    //if we have messageAlert and messageText
-                    if (messageAlert && messageText) {
-                        //inject the alert to .messages div in form
-                        $('#contactForm').find('.messages').html(alertBox);
-                        //empty form
-                        $('#contactForm')[0].reset();
-                    }
-                }
-            });
-            return false;
-        }
-    });
 
 });
