@@ -64,4 +64,40 @@ $(document).ready(function() {
     
     $('.nav-link').click(routePages);
 
+    //contact form code
+    $('#contactForm').validator();
+
+    $('#contactForm').on('submit', function(e) {
+        //if validator does not prevent form submit
+        if (!e.isDefaultPrevented()) {
+            var url = "contact.php";
+            
+            //POST values in background of the script URL
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize(),
+                success: function(data)
+                {
+                    //data = JSON object return from contact.php
+                    //we receive the type of message: success x danger and apply it
+                    var messageAlert = 'alert-' + data.type;
+                    var messageText = data.message;
+
+                    //compose bootstrap alert box html
+                    var alertBox = '<div class="alert ' +messageAlert+ ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +messageText+ '</div>';
+                    
+                    //if we have messageAlert and messageText
+                    if (messageAlert && messageText) {
+                        //inject the alert to .messages div in form
+                        $('#contactForm').find('.messages').html(alertBox);
+                        //empty form
+                        $('#contactForm')[0].reset();
+                    }
+                }
+            });
+            return false;
+        }
+    });
+
 });
