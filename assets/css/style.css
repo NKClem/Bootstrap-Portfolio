@@ -16,7 +16,8 @@
 .container {
 	margin-top: 10vh;
 }
-.card {
+
+#aboutMeCard {
 	border: none;
 	margin-top: 6vh;
 }
@@ -27,6 +28,11 @@
 
 .buttons{
 	padding-top: 20px;
+}
+
+.portfolioCard {
+	width: 20rem;
+	margin: 1em;
 }
 
 footer {
