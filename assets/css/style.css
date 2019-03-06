@@ -1,16 +1,21 @@
 .jumbotron {
 	background-image: url("../images/bryanpark.jpg");
 	background-size: cover;
+	height: 30vh;
 	color: #000000;
-	text-align: center; 
 }
 
-.transbox {
-	margin: 4em 6em 2em 6em;
-	padding: 3em 1em 3em 1em;
-	background-color: #ffffff;
-	border: 1px solid #000000;
-	opacity: 0.7;
+#jumboHeading {
+	font-family: 'Berkshire Swash', cursive;
+	text-align: center;
+}
+
+.navbar-brand {
+	margin-left: 2vw;
+}
+
+.nav-item {
+	margin-right: 2vw;
 }
 
 .container {
@@ -22,14 +27,6 @@
 	margin-top: 6vh;
 }
 
-.input-group {
-	padding: 10px 0;
-}
-
-.buttons{
-	padding-top: 20px;
-}
-
 .portfolioCard {
 	width: 20rem;
 	margin: 1em;
@@ -37,8 +34,14 @@
 
 footer {
 	background-color: white;
-	/*position: absolute;
-	bottom: 0;*/
+}
+
+.contactLink {
+	margin-left: 2vw;
+}
+
+#copyright {
+	margin-right: 2vw;
 }
 
 #connectIcons, #copyright {

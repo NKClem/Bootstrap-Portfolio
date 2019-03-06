@@ -18,9 +18,6 @@
 		<!-- Link CSS file -->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-		<!-- Ajax 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-
 		<title>My Portfolio Page: Portfolio</title>
 	</head>
 	<body>
@@ -31,22 +28,18 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navCollapse">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="#" data-content="aboutMe">About</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#" data-content="portfolio">Portfolio</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#" data-content="contactMe">Contact Me</a>
-					</li>
 				</ul>
 			</div>
 		</nav>
-		<div class="jumbotron jumbotron-fluid">
-			<div class="transbox">
-				<h1 id="jumboHeading">About Me</h1>
-			</div>
+		<div class="jumbotron jumbotron-fluid"></div>
+		<div class="heading">
+			<h1 id="jumboHeading">About Me</h1>
 		</div>
 	
 		<!-- start About Me section -->
@@ -58,7 +51,7 @@
 				<div class="col-lg-6">
 					<div class="card" id="aboutMeCard">
 						<div class="card-body">
-							<p>Nicole Clements is a web developer based in Richmond, VA.  Proficient technologies include HTML, CSS, JavaScript, and NodeJS, as well as the Bootstrap and React libraries.  Currently, learning PHP and how to make cool WordPress themes.  In her free time, Nicole enjoys building games, working on a Metal Archives app, hanging out with her family, and beating her running PR.</p>
+							<p>Nicole Clements is a web developer, based in Richmond, VA.  Proficient in the following technologies: HTML, CSS, JavaScript, and NodeJS, as well as the Bootstrap and React libraries.  Currently, learning PHP and how to make cool WordPress themes.  In her free time, Nicole enjoys building games, working on a Metal Archives app, hanging out with her family, and beating her running PR.</p>
 						</div>
 					</div>
 				</div>
@@ -72,78 +65,20 @@
 		</div>
 		<!-- end Portfolio section -->
 
-		<!-- start Contact Me section -->
-		<div class="container mb-5 d-none" id="contactMeSection">
-				<form id="contactForm" method="post" action="contact.php" role="form">
-
-						<div class="messages"></div>
-					
-						<div class="controls">
-					
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label for="form_name">First Name *</label>
-										<input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-										<div class="help-block with-errors"></div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label for="form_lastname">Last Name *</label>
-										<input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-										<div class="help-block with-errors"></div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label for="form_email">Email *</label>
-										<input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-										<div class="help-block with-errors"></div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label for="form_message">Message *</label>
-										<textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
-										<div class="help-block with-errors"></div>
-									</div>
-								</div>
-								<div class="col-md-12">
-									<input type="submit" class="btn btn-success btn-send" value="Send message">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<p class="text-muted">
-										<strong>*</strong> These fields are required. Contact form template by
-										<a href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form" target="_blank">Bootstrapious</a>.</p>
-								</div>
-							</div>
-						</div>
-					
-					</form>
-		</div>
-		<!-- end Contact Me section -->
-
 		<footer class="navbar sticky-bottom">
 			<div id="connectIcons">
-				<a href="https://github.com/NKClem" target="_blank">
-					<img class="connectImg" src="assets/images/github_square.png" alt="GitHub OctoCat Logo" height="50em" width="50em"/>
-				</a>
-				<a href="https://www.linkedin.com/in/nicole-k-clements/" target="_blank">
+				<a href="https://www.linkedin.com/in/nicole-k-clements/" class="contactLink" target="_blank">
 					<img class="connectImg" src="assets/images/linkedin_square.png" alt="LinkedIn Logo" height="50em" width="50em"/>
 				</a>
-				<a href="https://stackoverflow.com/users/8599027/nicole" target="_blank">
-					<img class="connectImg" src="assets/images/stackoverflow_square.png" alt="StackOverflow Logo" height="50em" width="50em"/>
+				<a href="https://github.com/NKClem" class="contactLink" target="_blank">
+					<img class="connectImg" src="assets/images/github_square.png" alt="GitHub OctoCat Logo" height="50em" width="50em"/>
+				</a>
+				<a href="https://twitter.com/NKClem09" class="contactLink" target="_blank">
+					<img class="connectImg" src="assets/images/twitter_square.png" alt="Twitter Logo" height="50em" width="50em"/>
 				</a>
 			</div>
 			<div class="ml-auto" id="copyright">
-				<small>&copy; Copyright 2017 Nicole Clements</small>
+				<small>&copy; Copyright 2019 <a href="nkclem09@gmail.com">Nicole Clements</a></small>
 			</div>
 		</footer>
 	</body>
@@ -151,6 +86,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
 	<script src="assets/javascript/app.js"></script>
 </html>
